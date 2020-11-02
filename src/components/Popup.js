@@ -8,7 +8,7 @@ function Popup({ selected, closePopup }) {
 			<div className="content">
 				<h2>{ selected.title } <span>{ selected.start_date }</span></h2>
 				{/* <p className="rating">Rating: {selected.score}</p> */}
-				<div className="col-1">
+				<div className="col_1">
 				<ul className="movie-gen">
                 <li>{selected.rating}  | </li>
 				<span className="label">Type:</span>

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Result({result, openPopup}) {
     var year  = new Date (result.start_date).getFullYear();
-    console.log(year);
+    
     
     return (
         <div className="result" onClick={() => openPopup(result.mal_id)}>
