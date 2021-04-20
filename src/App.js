@@ -64,7 +64,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Animeeeee </h1>
+        <h1>Anime x2z</h1>
       </header>
       <main>
           <Search handleInput={handleInput} search={search} />
