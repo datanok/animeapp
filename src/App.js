@@ -75,14 +75,9 @@ function App() {
 
 
       </main>
-      <footer>
-        
-          <p>Project By <a href="https://github.com/datanoks">Tanmay Patil</a>  </p><a href="" className="git">Github</a>
-          
-       
-            
-          
-</footer>
+      <footer class='footer'> 
+          <p>Project By <a href="https://github.com/datanok">Tanmay Patil</a>  </p><a href="https://github.com/datanok/animeapp" className="git">Github</a>      
+      </footer>
       
     </div>
   );
