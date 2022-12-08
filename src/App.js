@@ -15,7 +15,7 @@ function App() {
     selected: {}
 
    });
-  const apiurl = "https://api.jikan.moe/v3";
+  const apiurl = "https://docs.api.jikan.moe/";
 
   const search = (e) => {
     if(e.key === "Enter"){
