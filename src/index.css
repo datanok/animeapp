@@ -7,7 +7,6 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  /* background: #1d1f30; */
   background-color: #E9E3E6;
 
   z-index: 0;
@@ -172,7 +171,7 @@ h5{
   font-size: 0.8em;
   padding-top: 1em;
 }
-//, after every title and period after last child
+/* comma after every title and period after last child*/
 .other-titles:after { content: ", "; }
 .other-titles:last-child:after { content: "."; }
 
