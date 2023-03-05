@@ -4,15 +4,22 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Result({result, openPopup}) {
-    var year  = new Date (result.start_date).getFullYear();
+    var year  = new Date (result.aired.from).getFullYear();
+    console.log(result);
     
     
     return (
         <div className="result" onClick={() => openPopup(result.mal_id)}>
-            <img src={result.image_url} />
-            <h3>{result.title}</h3> 
-            <span><i className="fas fa-star"></i>{result.score}<span className="year">{year}</span></span>
+            <img src={result.images.jpg.image_url} />
+            <div className="result-box">
+            <div className='first-line'>
+            <span><i className="fas fa-star"></i>{result.score}</span>
+            <span className="year">{year}</span>
+            <span>{result.type}</span>
+            </div>
             
+            <h3>{result.title}</h3> 
+            </div>
         
         </div>
     )
