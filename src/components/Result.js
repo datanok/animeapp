@@ -1,7 +1,6 @@
 import React from 'react'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Result({result, openPopup}) {
     var year  = new Date (result.aired.from).getFullYear();
