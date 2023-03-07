@@ -8,26 +8,45 @@ import Popup from "./components/Popup";
 import { FaGithub } from "react-icons/fa";
 
 function App() {
+  const [nores, setRes] = useState(true);
   const [searched, setSearched] = useState(false);
   const [state, setState] = useState({
     s: "",
     results: [],
     selected: {},
+    nores: false,
   });
   const apiurl = " https://api.jikan.moe/v4";
 
-  const search = (e) => {
+  const search = async (e) => {
     if (e.key === "Enter") {
-      setSearched(true);
-      axios(apiurl + "/anime?q=" + state.s).then(({ data }) => {
-        let results = data.data;
-
-        setState((prevState) => {
-          return { ...prevState, results: results };
-        });
-      });
+      const searchQuery = state.s.trim();
+      if (!searchQuery) {
+        setState((prevState) => ({
+          ...prevState,
+          nores: true,
+          searched: true,
+          results: [],
+        }));
+      } else {
+        setSearched(true);
+        try {
+          const { data } = await axios(`${apiurl}/anime?q=${searchQuery}`);
+          const results = data?.data || []; //check if data property exists in the data object if yes then assign it to results or assign it an empty array
+          setState((prevState) => ({
+            ...prevState,
+            results,
+            searched: true,
+            nores: results.length === 0,
+          }));
+        } catch (error) {
+          console.error(error);
+        }
+      }
     }
   };
+  
+
 
   const handleInput = (e) => {
     let s = e.target.value;
@@ -39,13 +58,16 @@ function App() {
   };
 
   const openPopup = (mal_id) => {
-    axios(apiurl + "/anime/" + mal_id).then(({ data }) => {
-      let result = data.data;
-
-      setState((prevState) => {
-        return { ...prevState, selected: result };
+    axios
+      .get(`${apiurl}/anime/${mal_id}`)
+      .then(({ data }) => {
+        const selected = data.data;
+        setState((prevState) => ({ ...prevState, selected }));
+      })
+      .catch((error) => {
+        console.error("Error fetching anime details:", error);
+        setState((prevState) => ({ ...prevState, selected: {} }));
       });
-    });
   };
 
   const closePopup = () => {
@@ -53,11 +75,7 @@ function App() {
       return { ...prevState, selected: {} };
     });
   };
-  const Footer = () => (
-    <footer className="footer">
-      <p>Some footer nonsense!</p>
-    </footer>
-  );
+
   return (
     <div className="App">
       <header className="App-header">
@@ -66,7 +84,7 @@ function App() {
       <main>
         <Search handleInput={handleInput} search={search} />
 
-        <Results results={state.results} openPopup={openPopup} state={state} searched={searched}/>
+        <Results results={state.results} openPopup={openPopup} state={state} searched={state.searched} nores={state.nores}/>
 
         {typeof state.selected.title != "undefined" ? (
           <Popup selected={state.selected} closePopup={closePopup} />

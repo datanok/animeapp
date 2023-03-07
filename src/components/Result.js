@@ -4,8 +4,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Result({result, openPopup}) {
     var year  = new Date (result.aired.from).getFullYear();
-    console.log(result);
-    
     
     return (
         <div className="result" onClick={() => openPopup(result.mal_id)}>

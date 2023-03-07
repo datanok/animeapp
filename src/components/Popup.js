@@ -43,6 +43,7 @@ function Popup({ selected, closePopup }) {
 
   return (
     <section className="popup">
+      <button class="close-button" onClick={closePopup}>&times;</button>
       <div className="content">
         <main>
           <div class="container">

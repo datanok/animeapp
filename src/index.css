@@ -12,6 +12,7 @@
      background-color: #E9E3E6;
      z-index: 0;
      color: #2E2532;
+     overflow-x: hidden;
 }
  header {
      padding: 50px 15px 0px;
@@ -909,3 +910,19 @@
   font-size: 1.5em;
   color: #2E2532;
 }
+.no-result img{
+    height: 350px;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    color: red;
+    font-size: 50px;
+    cursor: pointer;
+  }
+  
