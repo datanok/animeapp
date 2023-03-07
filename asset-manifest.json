@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/animeapp/static/css/main.e369c583.css",
-    "main.js": "/animeapp/static/js/main.dd5f2708.js",
+    "main.css": "/animeapp/static/css/main.0d37ce55.css",
+    "main.js": "/animeapp/static/js/main.3dacb40f.js",
     "static/js/377.a87f558f.chunk.js": "/animeapp/static/js/377.a87f558f.chunk.js",
     "static/media/fa-solid-900.svg": "/animeapp/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
     "static/media/fa-brands-400.svg": "/animeapp/static/media/fa-brands-400.2f517e09eb2ca6650ff5.svg",
@@ -20,12 +20,12 @@
     "static/media/fa-regular-400.woff": "/animeapp/static/media/fa-regular-400.bb58e57c48a3e911f15f.woff",
     "static/media/fa-regular-400.woff2": "/animeapp/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
     "index.html": "/animeapp/index.html",
-    "main.e369c583.css.map": "/animeapp/static/css/main.e369c583.css.map",
-    "main.dd5f2708.js.map": "/animeapp/static/js/main.dd5f2708.js.map",
+    "main.0d37ce55.css.map": "/animeapp/static/css/main.0d37ce55.css.map",
+    "main.3dacb40f.js.map": "/animeapp/static/js/main.3dacb40f.js.map",
     "377.a87f558f.chunk.js.map": "/animeapp/static/js/377.a87f558f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e369c583.css",
-    "static/js/main.dd5f2708.js"
+    "static/css/main.0d37ce55.css",
+    "static/js/main.3dacb40f.js"
   ]
 }
