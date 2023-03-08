@@ -34,7 +34,7 @@ function Producers({ animeProducers }) {
   } else return <span>-</span>;
 }
 
-function Popup({ selected, closePopup }) {
+function Popup({ selected, closePopup ,handleGenreClick}) {
   console.log(selected);
   var desc = "No Summary Available";
   if (selected.synopsis) {
@@ -52,10 +52,13 @@ function Popup({ selected, closePopup }) {
                 <nav>
                   <ol class="breadcrumb-list">
                     <li class="breadcrumb-item">{selected.rating}</li>
+     
+                    <li class="breadcrumb-item">{selected.type}</li> 
                     {selected.genres.map((genre) => (
-                      <li class="breadcrumb-item">{genre.name}</li>
-                    ))}
-                    <li class="breadcrumb-item">{selected.type}</li>
+                    <button className="button-60" key={genre.name} onClick={() => handleGenreClick(genre.name)}>
+                      {genre.name}
+                      </button>
+                      ))}
                   </ol>
                 </nav>
               </div>
@@ -129,11 +132,11 @@ function Popup({ selected, closePopup }) {
               <div class="column-xs-12">
                 <Ytembed embedUrl={selected.trailer.embed_url} />
               </div>
-              <div class="column-xs-12 close-box">
+             {/*  <div class="column-xs-12 close-box">
                 <button className="close" onClick={closePopup}>
                   Close
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </main>

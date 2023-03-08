@@ -782,6 +782,7 @@
      padding: 0 0.5rem;
      color: #bbb8b8;
 }
+
  .description {
      border-top: 0.0625rem solid #2e2534;
      padding: 1rem 0 0 0;
@@ -918,11 +919,58 @@
     position: absolute;
     top: 0;
     right: 10px;
-    padding: 10px;
     border: none;
     background-color: transparent;
     color: red;
     font-size: 50px;
     cursor: pointer;
   }
+
+
+.button-60 {
+    appearance: none;
+    background-color: #e9e3e6;
+    border: 1px solid #ef476f;
+    margin-left: 4px;
+    border-radius: 0.375em;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #363636;
+    cursor: pointer;
+    margin-top: 0px;
+    /* margin-left: 4px; */
+    margin-right: 4px;
+    padding: calc(0.2em - 1px) 0.9em;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.button-60:active {
+  border-color: #4a4a4a;
+  outline: 0;
+}
+
+.button-60:focus {
+  border-color: #485fc7;
+  outline: 0;
+}
+
+.button-60:hover {
   
+  background-color: #ef476f;
+  color: white;
+  font-weight: bold;
+}
+
+.button-60:focus:not(:active) {
+  box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+}
+  
+.close-button:hover{
+    color: #2E2532;
+    border:2 px solid #ef476f;
+    overflow: hidden;
+}
