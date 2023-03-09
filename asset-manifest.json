@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/animeapp/static/css/main.461ce2ad.css",
-    "main.js": "/animeapp/static/js/main.49901077.js",
+    "main.css": "/animeapp/static/css/main.beb973f3.css",
+    "main.js": "/animeapp/static/js/main.11e39bdb.js",
     "static/js/377.a87f558f.chunk.js": "/animeapp/static/js/377.a87f558f.chunk.js",
     "static/media/fa-solid-900.svg": "/animeapp/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
     "static/media/fa-brands-400.svg": "/animeapp/static/media/fa-brands-400.2f517e09eb2ca6650ff5.svg",
@@ -19,13 +19,14 @@
     "static/media/fa-regular-400.ttf": "/animeapp/static/media/fa-regular-400.491974d108fe4002b2aa.ttf",
     "static/media/fa-regular-400.woff": "/animeapp/static/media/fa-regular-400.bb58e57c48a3e911f15f.woff",
     "static/media/fa-regular-400.woff2": "/animeapp/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
+    "static/media/Saiyan-Sans.ttf": "/animeapp/static/media/Saiyan-Sans.daf700d2a47edf876686.ttf",
     "index.html": "/animeapp/index.html",
-    "main.461ce2ad.css.map": "/animeapp/static/css/main.461ce2ad.css.map",
-    "main.49901077.js.map": "/animeapp/static/js/main.49901077.js.map",
+    "main.beb973f3.css.map": "/animeapp/static/css/main.beb973f3.css.map",
+    "main.11e39bdb.js.map": "/animeapp/static/js/main.11e39bdb.js.map",
     "377.a87f558f.chunk.js.map": "/animeapp/static/js/377.a87f558f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.461ce2ad.css",
-    "static/js/main.49901077.js"
+    "static/css/main.beb973f3.css",
+    "static/js/main.11e39bdb.js"
   ]
 }
