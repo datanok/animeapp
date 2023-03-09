@@ -43,9 +43,13 @@ function Popup({ selected, closePopup ,handleGenreClick}) {
 
   return (
     <section className="popup">
-      <button class="close-button" onClick={closePopup}>&times;</button>
+
       <div className="content">
         <main>
+          <div className="closeBox">
+          <button class="close-button" onClick={closePopup}>&times;</button>
+         
+          </div>
           <div class="container">
             <div class="grid second-nav">
               <div class="column-xs-12">

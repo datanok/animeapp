@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import './fonts/Saiyan-Sans.ttf';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Search from "./components/Search";
 import Results from "./components/Results";
@@ -101,18 +104,34 @@ function App() {
     });
   };
 
-  const openPopup = (mal_id) => {
-    axios
-      .get(`${apiurl}/anime/${mal_id}`)
-      .then(({ data }) => {
-        const selected = data.data;
+
+const openPopup = (mal_id) => {
+  axios
+    .get(`${apiurl}/anime/${mal_id}`)
+    .then(({ data }) => {
+      const selected = data.data;
+      if (selected.title) {
         setState((prevState) => ({ ...prevState, selected }));
-      })
-      .catch((error) => {
-        console.error("Error fetching anime details:", error);
-        setState((prevState) => ({ ...prevState, selected: {} }));
-      });
-  };
+      } else {
+        console.error("Error fetching anime details: title is undefined");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching anime details:", error);
+      toast.error('Error fetching anime details Please take this up with MyanimeList!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+      setState((prevState) => ({ ...prevState, selected: {} }));
+      
+    });
+};
 
   const closePopup = () => {
     setState((prevState) => {
@@ -143,11 +162,26 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Animetastic</h1>
+       
+        <h1 >Animetastic</h1>
+       
+       
       </header>
+      <ToastContainer
+position="top-right"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
       <main>
         <Search handleInput={handleInput} search={search} />
-        <button onClick={() => handleGenreClick(1)}>Action</button>
+    
         <Results
           results={state.results}
           openPopup={openPopup}
