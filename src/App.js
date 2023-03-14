@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Search from "./components/Search";
 import Results from "./components/Results";
 import Popup from "./components/Popup";
+import HomePage  from "./components/HomePage";
 
 import { FaGithub } from "react-icons/fa";
 
@@ -18,6 +19,7 @@ function App() {
     results: [],
     selected: {},
     nores: false,
+    searchMsg:''
   });
   const apiurl = "https://api.jikan.moe/v4";
   const [genreMap] = useState({
@@ -87,6 +89,7 @@ function App() {
             results,
             searched: true,
             nores: results.length === 0,
+            searchMsg:searchQuery
           }));
         } catch (error) {
           console.error(error);
@@ -150,6 +153,7 @@ const openPopup = (mal_id) => {
         results,
         searched: true,
         nores: results.length === 0,
+        searchMsg:genre +' Genre'
       }));
     } 
    
@@ -158,14 +162,16 @@ const openPopup = (mal_id) => {
     }
     closePopup();
   };
-
+  var displaySearch=false;
+  if(state.searchMsg.length > 0){
+    displaySearch = true;
+  }
+ 
+  
   return (
     <div className="App">
       <header className="App-header">
-       
-        <h1 >Animetastic</h1>
-       
-       
+        <h1 >Animetastic</h1> 
       </header>
       <ToastContainer
 position="top-right"
@@ -181,7 +187,13 @@ theme="light"
 />
       <main>
         <Search handleInput={handleInput} search={search} />
-    
+       {/* <HomePage openPopup={openPopup}/> */}
+       {displaySearch ? (
+       <h3>Results for {state.searchMsg}</h3>
+      ) : (
+         null
+      )}
+       
         <Results
           results={state.results}
           openPopup={openPopup}
